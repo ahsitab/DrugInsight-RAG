@@ -1,0 +1,105 @@
+{
+  "dataset_title": "DrugRev: A comprehensive customers reviews on drugs purchasing and satisfaction",
+  "source": "Mendeley Data",
+  "mendeley_url": "https://data.mendeley.com/datasets/64cc5w5dxy/1",
+  "doi": "10.17632/64cc5w5dxy.1",
+  "published_date": "August 13, 2023",
+  "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "authors": "Muhammad Rizwan et al.",
+  "domain": "Clinical Pharmacology, Pharmacovigilance, and Patient Satisfaction Analysis",
+  "target_users": "Clinical researchers, pharmacists, prescribing physicians, and healthcare consumers",
+  "raw_dataset_size": {
+    "rows": 392510,
+    "columns": 9,
+    "file_size_mb": 162.56,
+    "unique_drugs": 4715,
+    "unique_conditions": 7452
+  },
+  "processed_sample_size": {
+    "rows": 4500,
+    "columns": 11,
+    "unique_drugs": 295,
+    "unique_conditions": 10,
+    "reviews_with_adrs": 936
+  },
+  "schema_fields": [
+    {
+      "name": "ReviewId",
+      "type": "string",
+      "description": "Unique review identifier (REV_00001 to REV_04500)"
+    },
+    {
+      "name": "MedicineName",
+      "type": "string",
+      "description": "Brand or generic drug name evaluated"
+    },
+    {
+      "name": "Condition",
+      "type": "string",
+      "description": "Clinical diagnosis / therapeutic indication"
+    },
+    {
+      "name": "Rating",
+      "type": "float",
+      "description": "Quantitative customer satisfaction rating (1.0 to 10.0)"
+    },
+    {
+      "name": "ReviewDate",
+      "type": "string",
+      "description": "Timestamp of review publication"
+    },
+    {
+      "name": "UserName",
+      "type": "string",
+      "description": "Patient screen name or pseudonym"
+    },
+    {
+      "name": "IntakeDuration",
+      "type": "string",
+      "description": "Categorized duration of drug intake"
+    },
+    {
+      "name": "ReviewLength",
+      "type": "integer",
+      "description": "Length of customer review in characters"
+    },
+    {
+      "name": "NumberOfLikes",
+      "type": "integer",
+      "description": "Community helpfulness upvotes count"
+    },
+    {
+      "name": "SideEffects_Str",
+      "type": "string",
+      "description": "Validated extracted adverse drug reactions"
+    },
+    {
+      "name": "Reviews",
+      "type": "string",
+      "description": "Full narrative text of patient experience"
+    }
+  ],
+  "quality_issues_and_remediation": [
+    {
+      "issue": "Whitespace in Drug Names",
+      "fix": "Trimmed leading and trailing whitespace across all drug strings"
+    },
+    {
+      "issue": "Prefix in Conditions",
+      "fix": "Removed 'For ' prefix (e.g. 'For Anxiety' -> 'Anxiety')"
+    },
+    {
+      "issue": "Missing User Names",
+      "fix": "Imputed 56 null entries with 'Anonymous_User'"
+    },
+    {
+      "issue": "Malformed Intake Times",
+      "fix": "Standardized non-duration string entries to 'Not Specified'"
+    },
+    {
+      "issue": "Unstructured Adverse Reactions",
+      "fix": "Applied clinical rule-based keyword extraction for 27 standardized ADRs"
+    }
+  ],
+  "sampling_strategy": "Stratified balanced sampling across top 10 therapeutic conditions ensuring >=30 reviews per drug-condition pair for rich multi-hop graph connectivity while adhering to Neo4j Aura Free tier node limits."
+}

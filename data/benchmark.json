@@ -1,0 +1,376 @@
+[
+  {
+    "id": "SH1",
+    "type": "Single-hop",
+    "question": "What medical condition is Ambien prescribed for, and what is its average customer rating?",
+    "gold": "Ambien is prescribed for Insomnia with an average customer rating of 7.20 (based on 46 reviews).",
+    "target_entities": [
+      "Ambien",
+      "Insomnia"
+    ],
+    "retrieval_target": "Ambien-[TREATS]->Insomnia"
+  },
+  {
+    "id": "SH2",
+    "type": "Single-hop",
+    "question": "Which conditions is Lexapro prescribed to treat according to patient reviews?",
+    "gold": "Lexapro is prescribed to treat Anxiety (average rating 6.93) and Depression (average rating 6.86).",
+    "target_entities": [
+      "Lexapro",
+      "Anxiety",
+      "Depression"
+    ],
+    "retrieval_target": "Lexapro-[TREATS]->Anxiety,Depression"
+  },
+  {
+    "id": "SH3",
+    "type": "Single-hop",
+    "question": "What condition is Vyvanse prescribed for, and how many patient reviews are recorded?",
+    "gold": "Vyvanse is prescribed for ADHD with 94 patient reviews recorded (average rating 7.31).",
+    "target_entities": [
+      "Vyvanse",
+      "ADHD"
+    ],
+    "retrieval_target": "Vyvanse-[TREATS]->ADHD"
+  },
+  {
+    "id": "SH4",
+    "type": "Single-hop",
+    "question": "What medical indication is Accutane primarily reviewed for in the dataset?",
+    "gold": "Accutane is reviewed for Acne, with an average rating of 7.40 across 48 patient reviews.",
+    "target_entities": [
+      "Accutane",
+      "Acne"
+    ],
+    "retrieval_target": "Accutane-[TREATS]->Acne"
+  },
+  {
+    "id": "SH5",
+    "type": "Single-hop",
+    "question": "What is the average patient rating for Pristiq when prescribed for Depression?",
+    "gold": "Pristiq has an average rating of 6.78 across 18 reviews for Depression.",
+    "target_entities": [
+      "Pristiq",
+      "Depression"
+    ],
+    "retrieval_target": "Pristiq-[TREATS]->Depression"
+  },
+  {
+    "id": "SH6",
+    "type": "Single-hop",
+    "question": "What therapeutic indications is Ozempic used for in the dataset?",
+    "gold": "Ozempic is used for Diabetes, Type 2 (average rating 6.14) and Weight Loss (Obesity/Overweight) (average rating 6.57).",
+    "target_entities": [
+      "Ozempic",
+      "Diabetes, Type 2",
+      "Weight Loss (Obesity/Overweight)"
+    ],
+    "retrieval_target": "Ozempic-[TREATS]->Diabetes, Type 2,Weight Loss"
+  },
+  {
+    "id": "MH1",
+    "type": "Multi-hop",
+    "question": "Which drugs prescribed for Depression also have patient reports of insomnia as an adverse side effect?",
+    "gold": "Antidepressants reporting insomnia include Mirtazapine (20 reports, 25.97%), Trazodone (16 reports, 29.63%), Quetiapine (14 reports, 25.45%), Amitriptyline (6 reports), and Cymbalta (4 reports).",
+    "target_entities": [
+      "Depression",
+      "insomnia",
+      "Mirtazapine",
+      "Trazodone",
+      "Quetiapine"
+    ],
+    "retrieval_target": "Depression<-[:TREATS]-(Drug)-[:CAUSES_SIDE_EFFECT]->insomnia"
+  },
+  {
+    "id": "MH2",
+    "type": "Multi-hop",
+    "question": "Which medications used for Anxiety also cause nausea according to customer reviews?",
+    "gold": "Anxiety medications reporting nausea include Escitalopram (4 reports), Lexapro (4 reports), Tramadol (3 reports), Propranolol (3 reports), and Bupropion (2 reports).",
+    "target_entities": [
+      "Anxiety",
+      "nausea",
+      "Escitalopram",
+      "Lexapro",
+      "Tramadol"
+    ],
+    "retrieval_target": "Anxiety<-[:TREATS]-(Drug)-[:CAUSES_SIDE_EFFECT]->nausea"
+  },
+  {
+    "id": "MH3",
+    "type": "Multi-hop",
+    "question": "Which pharmaceutical drugs are prescribed for both Depression and Pain?",
+    "gold": "Drugs treating both Depression and Pain include Amitriptyline (rating 7.59) and Tramadol (rating 7.48).",
+    "target_entities": [
+      "Depression",
+      "Pain",
+      "Amitriptyline",
+      "Tramadol"
+    ],
+    "retrieval_target": "(Drug)-[:TREATS]->Depression AND (Drug)-[:TREATS]->Pain"
+  },
+  {
+    "id": "MH4",
+    "type": "Multi-hop",
+    "question": "Which medications prescribed for Bipolar Disorder have reports of tremor or shaking?",
+    "gold": "Bipolar disorder medications reporting tremor include Latuda (1 report) and Paliperidone (1 report).",
+    "target_entities": [
+      "Bipolar Disorder",
+      "tremor",
+      "Latuda",
+      "Paliperidone"
+    ],
+    "retrieval_target": "Bipolar Disorder<-[:TREATS]-(Drug)-[:CAUSES_SIDE_EFFECT]->tremor"
+  },
+  {
+    "id": "MH5",
+    "type": "Multi-hop",
+    "question": "Which medications used for Type 2 Diabetes also have documented reviews for Weight Loss?",
+    "gold": "Ozempic (Semaglutide) is prescribed for both Type 2 Diabetes and Weight Loss (Obesity/Overweight).",
+    "target_entities": [
+      "Diabetes, Type 2",
+      "Weight Loss (Obesity/Overweight)",
+      "Ozempic"
+    ],
+    "retrieval_target": "(Drug)-[:TREATS]->Diabetes, Type 2 AND (Drug)-[:TREATS]->Weight Loss"
+  },
+  {
+    "id": "MH6",
+    "type": "Multi-hop",
+    "question": "Which drugs for Depression also cause weight gain according to patient reports?",
+    "gold": "Depression medications reporting weight gain include Mirtazapine (13 reports, 16.88%), Quetiapine (8 reports), Lexapro (4 reports), and Pristiq (3 reports).",
+    "target_entities": [
+      "Depression",
+      "weight gain",
+      "Mirtazapine",
+      "Quetiapine",
+      "Lexapro"
+    ],
+    "retrieval_target": "Depression<-[:TREATS]-(Drug)-[:CAUSES_SIDE_EFFECT]->weight gain"
+  },
+  {
+    "id": "AG1",
+    "type": "Aggregation",
+    "question": "What are the top 3 highest rated medications for Type 2 Diabetes with at least 5 reviews?",
+    "gold": "The top 3 highest rated medications for Type 2 Diabetes are Byetta (rating 8.75), Victoza (rating 8.04), and Janumet (rating 8.00).",
+    "target_entities": [
+      "Diabetes, Type 2",
+      "Byetta",
+      "Victoza",
+      "Janumet"
+    ],
+    "retrieval_target": "Top rated drugs treating Diabetes, Type 2"
+  },
+  {
+    "id": "AG2",
+    "type": "Aggregation",
+    "question": "Compare the review count and average rating of Pristiq versus Zoloft for Depression.",
+    "gold": "For Depression, Pristiq has 18 reviews with an average rating of 6.78, whereas Zoloft has 19 reviews with an average rating of 6.21.",
+    "target_entities": [
+      "Pristiq",
+      "Zoloft",
+      "Depression"
+    ],
+    "retrieval_target": "Rating and count comparison for Pristiq and Zoloft"
+  },
+  {
+    "id": "AG3",
+    "type": "Aggregation",
+    "question": "What are the most commonly reported side effects across all patient reviews for Lexapro?",
+    "gold": "The most reported side effects for Lexapro are nausea (4 mentions), weight gain (4 mentions), insomnia (3 mentions), headache (2 mentions), and diarrhea (2 mentions).",
+    "target_entities": [
+      "Lexapro",
+      "nausea",
+      "weight gain",
+      "insomnia",
+      "headache"
+    ],
+    "retrieval_target": "Side effects frequency for Lexapro"
+  },
+  {
+    "id": "AG4",
+    "type": "Aggregation",
+    "question": "What are the top 3 highest rated treatments for Acne with at least 5 customer reviews?",
+    "gold": "The top 3 highest rated Acne treatments are Doryx (rating 9.80), Retin-A (rating 8.80), and Benzaclin (rating 8.80).",
+    "target_entities": [
+      "Acne",
+      "Doryx",
+      "Retin-A",
+      "Benzaclin"
+    ],
+    "retrieval_target": "Top rated treatments for Acne"
+  },
+  {
+    "id": "AG5",
+    "type": "Aggregation",
+    "question": "What are the top 3 most frequently reported adverse side effects across the entire customer review dataset?",
+    "gold": "The top 3 adverse side effects across all reviews are insomnia (221 total mentions across 78 drugs), nausea (188 mentions across 80 drugs), and weight loss (108 mentions across 31 drugs).",
+    "target_entities": [
+      "insomnia",
+      "nausea",
+      "weight loss"
+    ],
+    "retrieval_target": "Global side effect counts in graph"
+  },
+  {
+    "id": "AG6",
+    "type": "Aggregation",
+    "question": "Which drug prescribed for Insomnia has the highest total number of customer reviews?",
+    "gold": "Ambien has the highest review volume for Insomnia with 46 reviews (average rating 7.20), followed by Belsomra with 43 reviews.",
+    "target_entities": [
+      "Insomnia",
+      "Ambien",
+      "Belsomra"
+    ],
+    "retrieval_target": "Most reviewed drug for Insomnia"
+  },
+  {
+    "id": "SE1",
+    "type": "Semantic / descriptive",
+    "question": "How do patients describe their clinical blood sugar control and side effects when taking Ozempic for Type 2 Diabetes?",
+    "gold": "Patients describe dramatic reductions in A1C blood sugar levels (e.g., lowering from 7.1 to 5.6 within 6 months), but frequently report persistent and distressing nausea, especially during upward dosage titration.",
+    "target_entities": [
+      "Ozempic",
+      "Diabetes, Type 2",
+      "A1C",
+      "nausea"
+    ],
+    "retrieval_target": "Qualitative patient reviews for Ozempic"
+  },
+  {
+    "id": "SE2",
+    "type": "Semantic / descriptive",
+    "question": "What psychological and somatic sensations do patients experience during the first week of initiating Lexapro for Anxiety?",
+    "gold": "Patients report waking up abruptly in the night, feeling strange or ungrounded, experiencing cold sweats, intense fear, transient paralysis sensations, and heightened initial anxiety.",
+    "target_entities": [
+      "Lexapro",
+      "Anxiety",
+      "cold sweat",
+      "fear"
+    ],
+    "retrieval_target": "Early intake narrative for Lexapro"
+  },
+  {
+    "id": "SE3",
+    "type": "Semantic / descriptive",
+    "question": "What advice and emotional sentiment do patients share regarding initiating Accutane for severe cystic acne despite negative online reviews?",
+    "gold": "Patients enthusiastically urge prospective users not to be deterred by negative online reviews, describing Accutane as life-changing for severe cystic acne and achieving complete skin clearing after failed topical therapies.",
+    "target_entities": [
+      "Accutane",
+      "Acne",
+      "cystic acne",
+      "life-changing"
+    ],
+    "retrieval_target": "Patient testimonials on Accutane"
+  },
+  {
+    "id": "SE4",
+    "type": "Semantic / descriptive",
+    "question": "How do adult patients newly diagnosed with ADHD describe their perspective and expectations when starting Vyvanse?",
+    "gold": "Adult patients diagnosed in adulthood (e.g. at age 35) describe feeling hopeful after undergoing extensive clinical questionnaires and diagnostic history, beginning initial titration (such as 30mg) with optimism for focus improvement.",
+    "target_entities": [
+      "Vyvanse",
+      "ADHD",
+      "hopeful",
+      "30mg"
+    ],
+    "retrieval_target": "Initial ADHD diagnosis review for Vyvanse"
+  },
+  {
+    "id": "SE5",
+    "type": "Semantic / descriptive",
+    "question": "How do patients taking Ambien describe their long-term sleep struggles and sleep onset quality?",
+    "gold": "Patients describe chronic insomnia spanning from teenage years, comparing Ambien to daytime sedatives like Xanax and Valium, and noting Ambien provides rapid sleep induction when prior medications lost potency.",
+    "target_entities": [
+      "Ambien",
+      "Insomnia",
+      "sleep onset",
+      "sedative"
+    ],
+    "retrieval_target": "Longitudinal insomnia review for Ambien"
+  },
+  {
+    "id": "SE6",
+    "type": "Semantic / descriptive",
+    "question": "How do patients describe the onset of withdrawal and discontinuation symptoms when missing doses of Cymbalta or Pristiq?",
+    "gold": "Patients describe rapid onset of severe physical and cognitive distress including brain zaps, extreme dizziness, electric shock sensations in the head, nausea, and emotional volatility when missing a dose.",
+    "target_entities": [
+      "Cymbalta",
+      "Pristiq",
+      "brain zaps",
+      "dizziness"
+    ],
+    "retrieval_target": "Antidepressant discontinuation / withdrawal reviews"
+  },
+  {
+    "id": "UN1",
+    "type": "Unanswerable",
+    "question": "What is the exact molecular weight, chemical synthesis pathway, and binding affinity of Sertraline for the human serotonin transporter?",
+    "gold": "I cannot answer this question from the available data. The dataset contains real-world customer reviews, ratings, and subjective experiences, not chemical synthesis pathways or binding affinity metrics.",
+    "target_entities": [
+      "Sertraline",
+      "molecular weight",
+      "binding affinity"
+    ],
+    "retrieval_target": "None (Out of Domain: Pharmacology Chem)"
+  },
+  {
+    "id": "UN2",
+    "type": "Unanswerable",
+    "question": "What is the FDA-approved pediatric dosage titration schedule of Vyvanse for children aged 6 to 12?",
+    "gold": "I cannot answer this question from the available data. The dataset contains patient-submitted reviews and subjective ratings, not official FDA-approved pediatric dosing schedules.",
+    "target_entities": [
+      "Vyvanse",
+      "pediatric dosage",
+      "FDA"
+    ],
+    "retrieval_target": "None (Out of Domain: Regulatory Clinical Dosage)"
+  },
+  {
+    "id": "UN3",
+    "type": "Unanswerable",
+    "question": "Which pharmaceutical company currently owns the active European commercial patent for Pristiq (desvenlafaxine)?",
+    "gold": "I cannot answer this question from the available data. Commercial patent ownership and corporate legal filings are not recorded in this customer review dataset.",
+    "target_entities": [
+      "Pristiq",
+      "patent",
+      "pharmaceutical company"
+    ],
+    "retrieval_target": "None (Out of Domain: Intellectual Property)"
+  },
+  {
+    "id": "UN4",
+    "type": "Unanswerable",
+    "question": "What was the exact p-value and hazard ratio for cardiovascular mortality in the Phase III clinical trial of Ozempic?",
+    "gold": "I cannot answer this question from the available data. The dataset contains customer post-marketing satisfaction reviews, not clinical trial randomized controlled trial (RCT) survival statistics or p-values.",
+    "target_entities": [
+      "Ozempic",
+      "p-value",
+      "hazard ratio"
+    ],
+    "retrieval_target": "None (Out of Domain: Trial Statistics)"
+  },
+  {
+    "id": "UN5",
+    "type": "Unanswerable",
+    "question": "What are the contraindications of combining Ambien with MAO inhibitors according to the official United States Pharmacopeia monograph?",
+    "gold": "I cannot answer this question from the available data. Official pharmacopeial monographs and drug-drug contraindication tables are not included in the customer review database.",
+    "target_entities": [
+      "Ambien",
+      "MAO inhibitors",
+      "pharmacopeia"
+    ],
+    "retrieval_target": "None (Out of Domain: Pharmacopeia Monograph)"
+  },
+  {
+    "id": "UN6",
+    "type": "Unanswerable",
+    "question": "What is the wholesale acquisition cost and manufacturer copay coupon discount for Latuda in US dollars?",
+    "gold": "I cannot answer this question from the available data. Commercial pricing, wholesale acquisition costs, and pharmacy coupon discounts are not captured in the review records.",
+    "target_entities": [
+      "Latuda",
+      "wholesale acquisition cost",
+      "copay"
+    ],
+    "retrieval_target": "None (Out of Domain: Commercial Pricing)"
+  }
+]

@@ -1,0 +1,27 @@
+# Large raw datasets (>100MB exceeds GitHub limits)
+DrugRev A comprehensive customers reviews on drugs purchasing and satisfaction/
+DrugRev*/
+*.csv.zip
+DrugReviews.csv
+
+# Python cache & virtualenvs
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# System & IDE files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log

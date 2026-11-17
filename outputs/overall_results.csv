@@ -1,0 +1,13 @@
+Metric,GraphRAG (Neo4j Aura),Vector RAG (ChromaDB)
+Hit@5 / Recall@5 (Retrieval),0.6878,0.6422
+Precision@5 (Retrieval),0.5933,0.5867
+Mean Reciprocal Rank (MRR),0.675,0.7967
+Accuracy (Key-item Match),0.9333,0.6667
+Token F1 (SQuAD),0.317,0.1362
+LLM-Judge Correctness (0-1),0.6433,0.3867
+Faithfulness / Groundedness,0.9667,0.8
+Refusal Accuracy (Unanswerable),1.0,0.0
+Entity-Linking F1 (GraphRAG),0.965,N/A
+Median Retrieval Latency (sec),0.2102,0.2809
+Median Total Latency (sec),4.3094,4.4001
+Mean Context Size (tokens),164.3,340.9
