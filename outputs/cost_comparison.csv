@@ -1,7 +1,0 @@
-Dimension,GraphRAG (Neo4j Aura),Vector RAG (ChromaDB)
-Build & Ingestion Code (LOC),"285 lines (Cypher schema, extraction, UNWIND batches)","110 lines (Text serialization, Chroma client)"
-Indexing Time (Sample Dataset),10.30 seconds (over cloud Neo4j Aura),38.43 seconds (local ONNX MiniLM)
-Median Retrieval Latency,0.2102s,0.2809s
-Mean Context Tokens Sent to LLM,164.3 tokens/query,340.9 tokens/query
-Context Reduction Efficiency,51.8% context savings,Baseline (100% full chunk payload)
-Storage & Memory Footprint,"8,296 nodes, 20,359 edges (~15 MB in Aura)",1095 384-d vectors (~5 MB in RAM/disk)

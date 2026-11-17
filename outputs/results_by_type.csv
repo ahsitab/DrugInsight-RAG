@@ -1,6 +1,0 @@
-Question Type,GraphRAG Accuracy,VectorRAG Accuracy,GraphRAG Token F1,VectorRAG Token F1,GraphRAG Context (Tokens),VectorRAG Context (Tokens),Winning System
-Single-hop,1.0,1.0,0.169,0.286,378.3,248.2,Tie
-Multi-hop,1.0,0.667,0.428,0.06,40.0,358.3,GraphRAG
-Aggregation,0.833,0.833,0.37,0.157,30.3,303.2,Tie
-Semantic / descriptive,0.833,0.833,0.102,0.106,371.8,402.0,Tie
-Unanswerable,1.0,0.0,0.516,0.072,1.0,392.8,GraphRAG

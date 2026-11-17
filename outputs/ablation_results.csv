@@ -1,6 +1,0 @@
-Model Key,Model Name,Family,Parameter Size,GraphRAG Accuracy,VectorRAG Accuracy,GraphRAG F1,VectorRAG F1,Ablation Batch Time (s)
-llama3.1:8b,Llama 3.1 8B,Meta AI,8B,1.0,0.6,0.308,0.144,39.44
-mistral:7b,Mistral 7B v0.3,Mistral AI,7.3B,1.0,0.6,0.308,0.144,39.4
-gemma2:9b,Gemma 2 9B,Google DeepMind,9B,1.0,0.6,0.308,0.144,39.05
-qwen2.5:7b,Qwen 2.5 7B,Alibaba Cloud,7B,1.0,0.6,0.308,0.144,39.49
-phi3.5:mini,Phi-3.5 Mini,Microsoft,3.8B,1.0,0.6,0.308,0.144,39.52
